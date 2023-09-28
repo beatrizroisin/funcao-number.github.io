@@ -9,6 +9,7 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    background-image: linear-gradient(0deg, #6ae86bad, white);
 }
 .validacao-dig{
     text-align: center;
@@ -20,8 +21,13 @@
     margin: 0;
 }
 #sequenciais input{
-    
+    width: 250px;
+    margin-bottom: 1em;
 }
 #sequenciais button{
     
+}
+.numerosValidar{
+    display: grid;
+    justify-content: center;
 }
