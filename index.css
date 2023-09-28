@@ -1,0 +1,27 @@
+#sequenciais .title-val{
+    font-size: 25px;
+    font-family: monospace;
+    padding: 0;
+    margin: 0;
+
+}
+#sequenciais{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.validacao-dig{
+    text-align: center;
+}
+#sequenciais p{
+    font-size: 15px;
+    font-family: arial;
+    padding: 8px 5px 25px 5px;
+    margin: 0;
+}
+#sequenciais input{
+    
+}
+#sequenciais button{
+    
+}
