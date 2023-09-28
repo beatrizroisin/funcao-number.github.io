@@ -1,4 +1,4 @@
-document.getElementById("botaoValidar").addEventListener("click", function() {
+function validarNumeros() {
     var numeros = document.getElementById("numeros").value.split(" ");
     var crescente = true;
     var decrescente = true;
@@ -23,4 +23,4 @@ document.getElementById("botaoValidar").addEventListener("click", function() {
     } else {
         $(divresult).before('<span>A sequência não é estritamente crescente nem decrescente."</span>')
     }
-});
+}
