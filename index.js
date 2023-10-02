@@ -12,15 +12,15 @@ document.getElementById("botaoValidar").addEventListener("click", function() {
             decrescente = false;
         }
     }
-    const divresult =   document.getElementsByClassName("validacao-dig")
+    const divresult =   document.getElementById("botaoValidar")
 
     if (numeros.length === 1) {
-      $(divresult).before('<span>A sequência possui apenas um número.</span>')
+      $(divresult).after('<span>A sequência possui apenas um número.</span>')
     } else if (crescente && !decrescente) {
-        $(divresult).before('<span>Os números são crescentes.</span>')
+        $(divresult).after('<span>Os números são crescentes.</span>')
     } else if (!crescente && decrescente) {
-        $(divresult).before('<span>Os números são decrescentes.</span>')
+        $(divresult).after('<span>Os números são decrescentes.</span>')
     } else {
-        $(divresult).before('<span>A sequência não é estritamente crescente nem decrescente."</span>')
+        $(divresult).after('<span>A sequência não é estritamente crescente nem decrescente."</span>')
     }
 });
