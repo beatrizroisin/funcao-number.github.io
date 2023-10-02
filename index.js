@@ -1,5 +1,5 @@
-function validarNumeros() {
-    var numeros = document.getElementById("numeros").value.split(" ");
+document.getElementById("botaoValidar").addEventListener("click", function() {
+        var numeros = document.getElementById("numeros").value.split(" ");
     var crescente = true;
     var decrescente = true;
 
@@ -23,4 +23,4 @@ function validarNumeros() {
     } else {
         $(divresult).before('<span>A sequência não é estritamente crescente nem decrescente."</span>')
     }
-}
+});
