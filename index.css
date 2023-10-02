@@ -24,8 +24,20 @@
     width: 250px;
     margin-bottom: 1em;
 }
+#sequenciais span{
+    padding: 1em;
+    font-family: arial;
+    font-size: 12px;
+    font-weight: 700;
+}
 #sequenciais button{
-    
+    background: #fff;
+    border: 0;
+    padding: 7px 10px 7px 10px;
+    font-weight: 700;
+    border-radius: 7px;
+    font-family: arial;
+    text-transform: uppercase;
 }
 .numerosValidar{
     display: grid;
