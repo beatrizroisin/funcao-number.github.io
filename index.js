@@ -14,6 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   
       const divresult = document.getElementById("botaoValidar");
+      const existingSpan = divresult.nextElementSibling;
+  
+      if (existingSpan && existingSpan.tagName === "SPAN") {
+        existingSpan.remove();
+      }
   
       if (numeros.length === 1) {
         $(divresult).after('<span>A sequência possui apenas um número.</span>');
@@ -22,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
       } else if (!crescente && decrescente) {
         $(divresult).after('<span>Os números são decrescentes.</span>');
       } else {
-        $(divresult).after('<span>A sequência não é estritamente crescente nem decrescente."</span>');
+        $(divresult).after('<span>A sequência não é estritamente crescente nem decrescente.</span>');
       }
     });
   });
