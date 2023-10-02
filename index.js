@@ -1,5 +1,5 @@
 document.getElementById("botaoValidar").addEventListener("click", function() {
-    var numeros = document.getElementById("numeros").value.split(" ");
+        var numeros = document.getElementById("numeros").value.split(" ");
     var crescente = true;
     var decrescente = true;
 
