@@ -1,0 +1,22 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    env:
+      REPO: ${{ github.repository }}
+      USER: ${{ github.actor }}
+      URL: ${{ github.event.head_commit.url }}
+    steps:
+      - name: Enviar mensagem para o Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+            -X POST \
+            -d '{
+              "username": "GitHub Bot",
+              "content": "**Novo merge no projeto:** '"$REPO"'\n**Nome do Usuário:** '"$USER"'\n**Data:** '"$(date '+%d/%m/%Y %H:%M')"'\n**Veja aqui:** '"$URL"'
+            }' \
+            https://discord.com/api/webhooks/1395495226856177857/Psd1LwDs32Di19v5ZOAuOQqAAykODPQedfz2ldUBq0I5gab5zonCOC1k-5Ull9R-ORZN
