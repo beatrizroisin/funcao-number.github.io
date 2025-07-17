@@ -25,7 +25,7 @@ jobs:
       - name: Enviar mensagem para o Discord se merged
         if: env.MERGED == 'true'
         run: |
-          CONTENT="**Novo merge no projeto:** $REPO\n**Nome do Usuário:** $USER\n**Data:** $(date '+%d/%m/%Y %H:%M')\n**Veja aqui:** $URL"
+          CONTENT="**Novo merge no projeto:** $REPO\n**Nome do Usuário:** $USER\n**Data:** $(TZ="America/Sao_Paulo" date '+%d/%m/%Y %H:%M')\n**Veja aqui:** $URL"
           curl -H "Content-Type: application/json" \
             -X POST \
             -d "{\"username\": \"GitHub Bot\", \"content\": \"$CONTENT\"}" \
