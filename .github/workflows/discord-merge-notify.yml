@@ -1,5 +1,8 @@
+name: Notify Discord on PR Merge to Main
+
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches:
       - main
 
@@ -9,9 +12,18 @@ jobs:
     env:
       REPO: ${{ github.repository }}
       USER: ${{ github.actor }}
-      URL: ${{ github.event.head_commit.url }}
+      URL: ${{ github.event.pull_request.html_url }}
+      MERGED: ${{ github.event.pull_request.merged }}
     steps:
-      - name: Enviar mensagem para o Discord
+      - name: Debug variáveis
+        run: |
+          echo "REPO=$REPO"
+          echo "USER=$USER"
+          echo "URL=$URL"
+          echo "MERGED=$MERGED"
+
+      - name: Enviar mensagem para o Discord se merged
+        if: env.MERGED == 'true'
         run: |
           curl -H "Content-Type: application/json" \
             -X POST \
@@ -19,4 +31,4 @@ jobs:
               "username": "GitHub Bot",
               "content": "**Novo merge no projeto:** '"$REPO"'\n**Nome do Usuário:** '"$USER"'\n**Data:** '"$(date '+%d/%m/%Y %H:%M')"'\n**Veja aqui:** '"$URL"'
             }' \
-            https://discord.com/api/webhooks/1395495226856177857/Psd1LwDs32Di19v5ZOAuOQqAAykODPQedfz2ldUBq0I5gab5zonCOC1k-5Ull9R-ORZN
+            https://discord.com/api/webhooks/SEU_WEBHOOK_AQUI
